@@ -47,7 +47,7 @@ const HomeScreen = (props) => {
   return (
     <View tw="flex-1 bg-white items-center justify-center">
       <StatusBar style="auto" />
-      <Link to="https://aetherspace-green-stack-starter.vercel.app/author">
+      <Link to="/author">
         <Image
           src="/img/icon.png"
           alt="App Icon"
