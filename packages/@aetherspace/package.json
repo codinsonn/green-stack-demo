@@ -1,0 +1,61 @@
+{
+    "name": "aetherspace",
+    "main": "index.ts",
+    "version": "1.0.0",
+    "private": true,
+    "license": "SEE LICENSE IN LICENSE.md",
+    "browser": {
+        "fs": false,
+        "os": false,
+        "path": false
+    },
+    "aetherspace": {
+        "relatedWorkspaces": [
+            "config"
+        ],
+        "requiredEnvVars": [
+            "APP_SECRET",
+            "APP_LINKS",
+            "BACKEND_URL",
+            "EXPO_ACCESS_TOKEN",
+            "CHROMATIC_PROJECT_TOKEN"
+        ]
+    },
+    "scripts": {
+        "build": "tsc --project .",
+        "check-workspaces": "IS_DEEP_CHECK=true node scripts/check-workspaces",
+        "link-routes": "node scripts/link-routes",
+        "collect-assets": "node scripts/collect-assets",
+        "collect-icons": "node scripts/collect-icons",
+        "collect-resolvers": "node scripts/collect-resolvers",
+        "collect-generators": "node scripts/collect-generators",
+        "documentation-reset": "node scripts/documentation-reset",
+        "document-components": "node scripts/document-components",
+        "dev-health-check": "NODE_ENV=development SAVE_GRAPHQL_SCHEMA=true node scripts/dev-health-check",
+        "schema-test": "node scripts/schema-test",
+        "add-workspace": "cd ../.. && yarn gen aether-workspace",
+        "add-schema": "cd ../.. && yarn gen aether-schema",
+        "add-resolver": "cd ../.. && yarn gen aether-resolver",
+        "add-route": "cd ../.. && yarn gen aether-route",
+        "add-form": "cd ../.. && yarn gen aether-form"
+    },
+    "dependencies": {
+        "@apollo/client": "^3.7.16",
+        "@apollo/server": "^4.7.5",
+        "@as-integrations/next": "^2.0.1",
+        "@expo/html-elements": "^0.5.1",
+        "@graphql-tools/schema": "^10.0.0",
+        "axios": "^1.4.0",
+        "crypto-js": "^4.2.0",
+        "graphql": "^16.7.1",
+        "graphql-request": "^6.1.0",
+        "graphql-type-json": "^0.3.2",
+        "swr": "^2.2.0",
+        "twrnc": "^3.6.1",
+        "zod": "~3.20.6"
+    },
+    "devDependencies": {
+        "@types/json-schema": "^7.0.12",
+        "inquirer-autocomplete-prompt": "^3.0.1"
+    }
+}

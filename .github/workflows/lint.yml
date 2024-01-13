@@ -1,0 +1,20 @@
+name: Linting
+on: [push]
+jobs:
+  check-linting:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18.x
+          cache: yarn
+
+      - name: Install packages
+        run: yarn install --immutable
+
+      - name: Run linting
+        run: yarn lint

@@ -1,0 +1,10 @@
+{
+    "name": "registries",
+    "main": "index.ts",
+    "version": "1.0.0",
+    "private": true,
+    "license": "UNLICENSED",
+    "scripts": {},
+    "dependencies": {},
+    "devDependencies": {}
+}
